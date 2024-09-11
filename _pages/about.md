@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='https://www.citi.sinica.edu.tw/'>Research Center for Information Technology Innovation</a>. alexpeng517@gmail.com #Address. Contacts. Motto. Etc.
 
 profile:
   align: right
