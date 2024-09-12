@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - AlexPeng517
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - AlexPeng517/IPEECSGradReviewer
+  - AlexPeng517/BHS2023_Project_SAM_MRI
+  - AlexPeng517/RBFNN_Self_Driving_Car_Simulation
+  - AlexPeng517/Hopfield_Network_Implementation
+  - AlexPeng517/Wild_Cat_Breeds_Classifier
+  - AlexPeng517/DOF-Calculator
