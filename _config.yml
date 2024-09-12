@@ -229,10 +229,6 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
-  - _pages/blog.md # Reserved for future
-  - _pages/dropdown.md # Reserved for future
-  - _pages/teaching.md # Reserved for future
-  - _pages/profiles.md # Reserved for future
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
