@@ -18,7 +18,8 @@
       "studyType": "Bachelor of Science (B.S.)",
       "startDate": "2020-09-15",
       "endDate": "2024-06-15",
-      "GPA": "4.1/4.3"
+      "score": "4.1/4.3; 3.9/4; 91/100",
+      "rank": "4/26"
     }
   ],
   "work": [
@@ -60,16 +61,27 @@
     }
 
   ],
-  "volunteer": [
+  "publications": [
     {
-      "organization": "Google Developer Student Club, National Central University",
-      "location": "Zongli, Taoyuan, Taiwan",
-      "position": "Core Team Member, Instructor",
-      "url": "https://gdg.community.dev/gdg-on-campus-national-central-university-taoyuan-city-taiwan/",
-      "startDate": "2021-08-01",
-      "endDate": "2022-08-01",
-      "summary": "Core team member for Google Developer Group student branch at National Central University, responsible for lecturing and advocate Machine Learning topics.",
-      "highlights": ["Host workshop of Introduction to Natural Language Processing on Google Cloud Platform", "Host workshop of Introduction to VertexAI of Google Cloud Platform", "Advocate Machine Learning Study Jams hosted by Google Developer Group"]
+      "name": "Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models",
+      "publisher": "Arxiv",
+      "releaseDate": "2024-08",
+      "url": "https://arxiv.org/abs/2408.11810",
+      "summary": ""
+    },
+    {
+      "name": "Diffusion-based Aesthetic QR Code Generation via Scanning-Robust Perceptual Guidance",
+      "publisher": "Arxiv",
+      "releaseDate": "2024-09",
+      "url": "https://www.arxiv.org/abs/2409.06355",
+      "summary": ""
+    },
+    {
+      "name": "Energy-Guided Probability Flow ODE-Based Diffusion Model for Aesthetic QR Code Generation",
+      "publisher": "TWSIAM",
+      "releaseDate": "2024",
+      "url": "",
+      "summary": ""
     }
   ],
   "awards": [
@@ -100,27 +112,16 @@
     }
 
   ],
-  "publications": [
+  "volunteer": [
     {
-      "name": "Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models",
-      "publisher": "Arxiv",
-      "releaseDate": "2024-08",
-      "url": "https://arxiv.org/abs/2408.11810",
-      "summary": ""
-    },
-    {
-      "name": "Diffusion-based Aesthetic QR Code Generation via Scanning-Robust Perceptual Guidance",
-      "publisher": "Arxiv",
-      "releaseDate": "2024-09",
-      "url": "https://www.arxiv.org/abs/2409.06355",
-      "summary": ""
-    },
-    {
-      "name": "Energy-Guided Probability Flow ODE-Based Diffusion Model for Aesthetic QR Code Generation",
-      "publisher": "TWSIAM",
-      "releaseDate": "2024",
-      "url": "",
-      "summary": ""
+      "organization": "Google Developer Student Club, National Central University",
+      "location": "Zongli, Taoyuan, Taiwan",
+      "position": "Core Team Member, Instructor",
+      "url": "https://gdg.community.dev/gdg-on-campus-national-central-university-taoyuan-city-taiwan/",
+      "startDate": "2021-08-01",
+      "endDate": "2022-08-01",
+      "summary": "Core team member for Google Developer Group student branch at National Central University, responsible for lecturing and advocate Machine Learning topics.",
+      "highlights": ["Host workshop of Introduction to Natural Language Processing on Google Cloud Platform", "Host workshop of Introduction to VertexAI of Google Cloud Platform", "Advocate Machine Learning Study Jams hosted by Google Developer Group"]
     }
   ],
   "skills": [
@@ -214,7 +215,7 @@
       "url": "https://example.com"
     }
   ],
-  "Extracurricular Activity": [
+  "extracurricular": [
     {
       "organization": "Photography Club, National Central University",
       "location": "Zongli, Taoyuan, Taiwan",
