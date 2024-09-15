@@ -241,16 +241,29 @@
   ], 
   "interests": [
     {
-      "name": "Physics",
+      "name": "Photography",
       "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
+      "keywords": ["still photography","filmmaking","astrophotography","aerial photography"]
+    },
+    {
+      "name": "Mountaineering",
+      "icon": "fa-solid fa-tag",
+      "keywords": []
+    },
+    {
+      "name": "Coffee",
+      "icon": "fa-solid fa-tag",
+      "keywords": []
+    },
+    {
+      "name": "Cooking",
+      "icon": "fa-solid fa-tag",
+      "keywords": []
+    },
+    {
+      "name": "Cycling",
+      "icon": "fa-solid fa-tag",
+      "keywords": []
     }
   ]
 }
