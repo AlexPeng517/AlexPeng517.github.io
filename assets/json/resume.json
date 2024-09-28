@@ -71,7 +71,7 @@
       "summary": ""
     },
     {
-      "name": "Diffusion-based Aesthetic QR Code Generation via Scanning-Robust Perceptual Guidance",
+      "name": "DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement",
       "publisher": "Arxiv",
       "releaseDate": "2024-09",
       "url": "https://www.arxiv.org/abs/2409.06355",
