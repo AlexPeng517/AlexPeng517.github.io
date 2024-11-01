@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper has been accepted to WACV 2025 :sparkle
+One paper has been accepted to WACV 2025 :sparkle:
