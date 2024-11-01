@@ -19,8 +19,7 @@
       "startDate": "2020-09-15",
       "endDate": "2024-06-15",
       "score": "4.1/4.3; 3.9/4; 91/100",
-      "rank": "4/26",
-      "transcript_pdf": "example_pdf.pdf"
+      "rank": "4/22"
     }
   ],
   "publications": [
@@ -33,7 +32,7 @@
     },
     {
       "name": "DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement",
-      "publisher": "Arxiv",
+      "publisher": "WACV 2025",
       "releaseDate": "2024-09",
       "url": "https://www.arxiv.org/abs/2409.06355",
       "summary": ""
@@ -56,7 +55,7 @@
       "startDate": "2023-07-01",
       "endDate": "2023-10-31",
       "summary": "Study adversarial attack and defense methods for computer vision models; Study principles of generative models.",
-      "highlights": ["Study conditional diffusion model behaviors under different conditions", "Design and implement image intellectual property protection algorithms against malicious usage of Diffusion Models.", "Establish research workflow integrating with Weight&Bias and Notion project management for our research teams."]
+      "highlights": ["Study conditional diffusion model behaviors under different conditions.", "Design and implement image intellectual property protection algorithms against malicious usage of Diffusion Models.", "Establish research workflow integrating with Weight&Bias and Notion project management for our research teams."]
     },
     {
       "name": "EECS Department Office, National Central University",
@@ -74,7 +73,7 @@
       "startDate": "2020-12-01",
       "endDate": "2021-08-31",
       "summary": " Build an orientation website for freshmen coming to National Central University (3000+ Users)",
-      "highlights": ["Develop NCUTUBE webpage with interative video playlists, timeline system and voting system using Vue.js, Nuxt.js and MongoDB."]
+      "highlights": ["Develop NCUTUBE webpage with interative video playlists, timeline system and voting system, using Vue.js, Nuxt.js and MongoDB."]
     }
 
   ],
@@ -84,7 +83,7 @@
       "date": "2023",
       "awarder": "National Tsing Hua University (NTHU) & National Yang Ming Chiao Tung University (NYCU)",
       "url": "https://2023.meichuhackathon.org/",
-      "summary": "Build an AI Cloud Native solution for intelligent X-ray security checking, semiconductor machine maintainance forecasting and employee attendance monitoring systems. Train a YOLO-based detector for prohibited items, achieving top performance in the leaderboard; Develop a trustworthy interactive natural-language querying system for employee attendance monitoring and automating monthly report generation, using LLMs, PandasAI, and Prompt-engineering; Train timeseries forecasting models to predict machine maintainance date;."
+      "summary": "Build an AI Cloud Native solution for intelligent X-ray security checking, semiconductor machine maintainance forecasting and employee attendance monitoring systems. Train a YOLO-based detector for prohibited items, achieving rank 1st performance in the leaderboard; Develop a trustworthy interactive natural-language querying system for employee attendance monitoring and automating monthly report generation, using LLMs, PandasAI, and Prompt-engineering; Train timeseries forecasting models to predict machine maintainance date;."
     },
     {
       "title": "The Dr. Chu Shun‑yi Zyxel Scholarship (Merit‑Based)",
@@ -102,7 +101,7 @@
       "title": "Excellent Club of the Year",
       "date": "2022",
       "awarder": "National Central University",
-      "summary": "Awarded second place in the academic category during annual evaluations as club director."
+      "summary": "Awarded 2nd place in the academic category during annual evaluations as club director."
     }
 
   ],
@@ -114,7 +113,7 @@
       "url": "https://gdg.community.dev/gdg-on-campus-national-central-university-taoyuan-city-taiwan/",
       "startDate": "2021-08-01",
       "endDate": "2022-08-01",
-      "summary": "Core team member for Google Developer Group student branch at National Central University, responsible for lecturing and advocate Machine Learning topics.",
+      "summary": "Core team member for Google Developer Group student branch at National Central University, lecturing and advocating Machine Learning topics.",
       "highlights": ["Host workshop of Introduction to Natural Language Processing on Google Cloud Platform", "Host workshop of Introduction to VertexAI of Google Cloud Platform", "Advocate Machine Learning Study Jams hosted by Google Developer Group"]
     }
   ],
@@ -122,15 +121,15 @@
     {
       "name": "Brain MRI Tumor Segmentation via Segment Anything Foundation Model ",
       "summary": "Adapting and fine‑tuning Segment Anything Model(SAM) to BraTS brain tumor segmentation task. Reached average 0.72 DICE Score with 12% improvement compared to the original model even if fine‑tuning on a small dataset (3000 image‑mask pairs).",
-      "highlights": ["Term project of BrainHack School 2023, University of Montreal, co-hosted by NCU (Grade: A+, 100/100)", "Segment Anything Model", "Foundation Model", "MRI", "BraTS"],
+      "highlights": ["Term project of BrainHack School 2023, University of Montreal and co-hosts by NCU (Grade: A+, 100/100)", "Segment Anything Model", "Foundation Model", "MRI", "BraTS"],
       "startDate": "",
       "endDate": "",
       "url": "https://github.com/AlexPeng517/BHS2023_Project_SAM_MRI"
     },
     {
       "name": "RBFNN Self‑driving Car Simulation",
-      "summary": "A self‑driving car simulation in 2D field using Radial Basis Function Neural Network (RBFNN). Implemented Gradient Descent Algorithm and Pseudo Inverse to solve the optimization problem.",
-      "highlights": ["Term project of *Neural Networks* course (Grade: A+, 90/100)", "Implement using plain Python and Numpy"],
+      "summary": "A self‑driving car simulation in 2D field using Radial Basis Function Neural Network (RBFNN). Implemented Gradient Descent and Pseudo Inverse to solve the optimization problem.",
+      "highlights": ["Term project of *Neural Networks* course (Grade: A+, 90/100)", "Implemented using plain Python and Numpy"],
       "startDate": "",
       "endDate": "",
       "url": "https://github.com/AlexPeng517/RBFNN_Self_Driving_Car_Simulation"
@@ -138,7 +137,7 @@
     {
       "name": "Hopfield Network Implementation",
       "summary": "A Hopfield network that could restore states corrupted by random noise. Implemented and investigated the relation between input sample quantity and network capacity, supporting the speculations via theories proposed by Geoffrey Hinton.",
-      "highlights": ["Term project of *Neural Networks* course (Grade: A+, 90/100)", "Implement using plain Python and Numpy"],
+      "highlights": ["Term project of *Neural Networks* course (Grade: A+, 90/100)", "Implemented using plain Python and Numpy"],
       "startDate": "",
       "endDate": "",
       "url": "https://github.com/AlexPeng517/Hopfield_Network_Implementation"
@@ -153,7 +152,7 @@
     },
     {
       "name": "Camera Depth of Field Simulator",
-      "summary": "Calculate depth of the field and simulating lens bokeh. Using a pre‑trained model to separate out the background, then generate simulated bokeh of background using Gaussian blur parameterized by calculated DOF.",
+      "summary": "Calculate Depth of the Field(DoF) and simulate lens bokeh. Using a pre‑trained model to separate out the background, then generate simulated bokeh of background using Gaussian blur parameterized by calculated DoF.",
       "highlights": ["Term project of *Introduction to Computer Science II* (Grade: A+, 97/100)", "OpenCV", "Java", "MODNet pre‑trained model"],
       "startDate": "",
       "endDate": "",
@@ -161,16 +160,7 @@
     }
   ],
   "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    },
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
+    
   ],
   "skills": [
     {
@@ -223,7 +213,7 @@
     },
     {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "Intermediate, TOEFL 93 (R26, L26, S21, W20)",
       "icon": ""
     }
   ],
@@ -236,7 +226,7 @@
       "startDate": "2021-08-01",
       "endDate": "2022-08-01",
       "summary": "Lead organizer of the Photography club at NCU",
-      "highlights": ["Give lectures on technical knowledges of cameras and imaging system", "Curate photography exhibition on campus", "Host workshop with international photography contest awardee", "Invited as the student representative jury of the school photography competition", "Interviewed by university journalists and published in the university journal."]
+      "highlights": ["Give lectures on technical knowledges of cameras and imaging system", "Curate a photography exhibition on campus", "Host a workshop with international photography contest awardee", "Invited as the student representative jury of the school photography competition", "Interviewed by university journalists and published in the university journal."]
     }
   ], 
   "interests": [
@@ -253,7 +243,7 @@
     {
       "name": "Coffee",
       "icon": "fa-solid fa-tag",
-      "keywords": []
+      "keywords": ["Specialty Pour-Over","Single Origin Espresso"]
     },
     {
       "name": "Cooking",
