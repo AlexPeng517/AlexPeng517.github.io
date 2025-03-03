@@ -22,6 +22,6 @@ Before joining NTHU, Alex was a research assistant at the Research Center for In
 
 Alex’s research interests span **computer vision, generative models, explainable AI, CogSci-inspired AI, and neural dynamic models**. He **aspires to pursue a Ph.D. at the intersection of computer vision and cognitive neuroscience**, aiming to uncover the fundamental principles of human visual intelligence.
 
-Beyond research, Alex was a core member and instructor at the Google Developer Student Club (GDSC) at NCU, where he led workshops on machine learning, computer vision, and cloud-based AI training. His experience in mentoring students and organizing technical training reflects his commitment to fostering interdisciplinary research and knowledge-sharing in AI.
+Beyond research, Alex was a core member and instructor at the Google Developer Student Club (GDSC) at NCU, where he led workshops on machine learning, computer vision, and cloud-based AI training. His experience in **mentoring students and organizing technical training** reflects his commitment to fostering interdisciplinary research and knowledge-sharing in AI.
 
 
