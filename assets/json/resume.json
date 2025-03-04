@@ -11,6 +11,15 @@
   },
   "education": [
     {
+      "institution": "National Tsing Hua University, Taiwan",
+      "location": "Hsinchu, Taiwan",
+      "url": "https://www.nthu.edu.tw/",
+      "area": "Electrical Engineering",
+      "studyType": "Master of Science (M.S.)",
+      "startDate": "2025-2-17",
+      "endDate": "2026-06-15 (Expected)"
+    },
+    {
       "institution": "National Central University, Taiwan",
       "location": "Zongli, Taoyuan, Taiwan",
       "url": "https://www.ncu.edu.tw/",
@@ -18,14 +27,14 @@
       "studyType": "Bachelor of Science (B.S.)",
       "startDate": "2020-09-15",
       "endDate": "2024-06-15",
-      "score": "4.1/4.3; 3.9/4; 91/100",
+      "score": "4.1/4.3",
       "rank": "4/22"
     }
   ],
   "publications": [
     {
       "name": "Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models",
-      "publisher": "Arxiv",
+      "publisher": "AAAI 2025",
       "releaseDate": "2024-08",
       "url": "https://arxiv.org/abs/2408.11810",
       "summary": ""
@@ -78,6 +87,13 @@
 
   ],
   "awards": [
+    {
+      "title": "MediaTek International Conference Travel Grant for AAAI 2025",
+      "date": "2025",
+      "awarder": "MediaTek Taiwan",
+      "url": "https://www.mediatek.tw/",
+      "summary": "Awarded as the first author of our AAAI 2025 paper."
+    },
     {
       "title": "Second Place in TSMC Group, 11th Hsinchu X Meichu Hackathon",
       "date": "2023",
