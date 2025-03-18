@@ -16,7 +16,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Li-Xuan (Alex) Peng is a first-year master’s student at National Tsing Hua University (NTHU), Taiwan, advised by [Prof. Min Sun](https://aliensunmin.github.io/) and co-advised by [Prof. Tsung-Wei Ke](https://twke18.github.io/). His research focuses on **physics-aware computer vision models and generative models for embodied vision**.
+Li-Xuan (Alex) Peng is a first-year master’s student at National Tsing Hua University (NTHU), Taiwan, advised by [Prof. Min Sun](https://aliensunmin.github.io/) and collaborate with [Prof. Tsung-Wei Ke](https://twke18.github.io/). His research focuses on **physics-aware computer vision models and generative models for embodied vision**.
 
 Before joining NTHU, Alex was a research assistant at the Research Center for Information Technology Innovation (CITI), Academia Sinica, where he worked with [Dr. Jun-Cheng Chen](https://homepage.citi.sinica.edu.tw/pages/pullpull/index_zh.html) on **adversarial attacks against generative diffusion models**. He earned his B.S. in Electrical Engineering and Computer Science at National Central University (NCU). His academic excellence has been recognized with the Dr. Chu Shun-Yi Zyxel Scholarship, **the most prestigious undergraduate award at NCU**, as well as the Excellent Student Scholarship for outstanding academic performance.
 
