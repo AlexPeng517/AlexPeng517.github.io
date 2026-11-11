@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import ResearchStatement from '../components/ResearchStatement.astro';
+import RolloutStrip from '../components/RolloutStrip.astro';
+import NewsList from '../components/NewsList.astro';
+import PubList from '../components/PubList.astro';
+import Footer from '../components/Footer.astro';
+import { getNews, getPublications, getSite } from '../lib/content';
+
+const site = await getSite();
+const publications = await getPublications();
+const news = await getNews();
+---
+
+<Base site={site} jsonLd>
+  <Header site={site} />
+  <ResearchStatement site={site} />
+  <RolloutStrip rollout={site.rollout} />
+  {news.length > 0 && <NewsList news={news} />}
+  <PubList groups={site.pubGroups} publications={publications} />
+  <Footer />
+</Base>

@@ -1,0 +1,49 @@
+---
+import { firstSentence, type Site } from '../lib/content';
+
+interface Props {
+  site: Site;
+  title?: string;
+  description?: string;
+  jsonLd?: boolean;
+  noindex?: boolean;
+}
+
+const { site, title = site.name, description = firstSentence(site.statement), jsonLd = false, noindex = false } =
+  Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og/home.png', Astro.site).href;
+
+// "Li-Xuan (Alex) Peng" -> "Li-Xuan Peng" for schema.org; the full form goes to alternateName.
+const plainName = site.name.replace(/\s*\([^)]*\)/, '');
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: plainName,
+  alternateName: [...new Set([...site.alternateNames, site.name])].filter((n) => n !== plainName),
+  affiliation: [{ '@type': 'CollegeOrUniversity', name: 'National Tsing Hua University' }],
+  url: new URL('/', Astro.site).href,
+  sameAs: [site.links.scholar, site.links.github, site.links.orcid].filter(Boolean),
+};
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+{jsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(person)} />}

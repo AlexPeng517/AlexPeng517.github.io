@@ -1,0 +1,121 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Site } from '../lib/content';
+
+interface Props {
+  rollout: Site['rollout'];
+}
+const { rollout } = Astro.props;
+
+// The clip lives in public/. Until the file exists the strip renders its placeholder state.
+const inPublic = (url: string) => Boolean(url) && existsSync(join(process.cwd(), 'public', url));
+const hasVideo = inPublic(rollout.video);
+const poster = inPublic(rollout.poster) ? rollout.poster : undefined;
+const webm = rollout.video.replace(/\.mp4$/, '.webm');
+const hasWebm = webm !== rollout.video && inPublic(webm);
+---
+
+<figure class="rollout">
+  {
+    hasVideo ? (
+      <div class="media strip">
+        <video
+          muted
+          playsinline
+          loop
+          preload="metadata"
+          poster={poster}
+          data-rollout
+          data-total-steps={rollout.totalSteps}
+          aria-label={rollout.caption}
+        >
+          {hasWebm && <source src={webm} type="video/webm" />}
+          <source src={rollout.video} type="video/mp4" />
+        </video>
+        {/* Bottom-left: the corner of the recording that is empty, so nothing in the clip is covered. */}
+        <div class="overlay">
+          <button type="button" class="textbtn play" data-rollout-play hidden>play</button>
+          <span class="readout" data-rollout-readout hidden />
+        </div>
+      </div>
+    ) : (
+      <div class="media strip placeholder" role="img" aria-label="DELPHI rollout clip placeholder">
+        <span class="placeholder-label">DELPHI ROLLOUT · 6–10 S LOOP · YOUR CLIP HERE</span>
+        <span class="readout">step 042 / {rollout.totalSteps > 0 ? rollout.totalSteps : '[N]'}</span>
+      </div>
+    )
+  }
+  <figcaption>
+    <span>{rollout.caption}</span>
+    <span class="state">
+      <span class="dot" aria-hidden="true"></span>
+      <span data-rollout-state>{hasVideo ? 'paused' : 'looping'}</span>
+    </span>
+  </figcaption>
+</figure>
+
+<script>
+  import '../scripts/video.ts';
+  import '../scripts/readout.ts';
+</script>
+
+<style>
+  .rollout { margin-top: 56px; }
+  .strip {
+    width: 100%;
+    aspect-ratio: 21 / 9;
+    background-color: var(--strip); /* always dark, both themes */
+  }
+  .strip video { width: 100%; height: 100%; object-fit: cover; }
+  .placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .placeholder-label {
+    padding: 0 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: var(--strip-ink-2);
+  }
+  .overlay {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    display: flex;
+    gap: 8px;
+  }
+  .readout, .play {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 18px;
+    font-variant-numeric: tabular-nums;
+    color: var(--strip-ink);
+  }
+  .placeholder .readout { position: absolute; right: 14px; bottom: 12px; }
+  /* Solid backing so the text stays legible over the recording. */
+  .overlay .readout, .overlay .play { padding: 1px 6px; border-radius: var(--radius); background: rgba(11, 12, 14, 0.88); }
+  .play { text-decoration-color: var(--strip-ink-2); }
+
+  figcaption {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 6px 16px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-caption);
+    line-height: 18px;
+    color: var(--ink-3);
+  }
+  .state { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 6px; height: 6px; border-radius: 3px; background: var(--accent); }
+</style>

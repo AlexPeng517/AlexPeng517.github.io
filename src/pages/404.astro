@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
+import { getSite } from '../lib/content';
+
+const site = await getSite();
+---
+
+<Base site={site} title={`Page not found · ${site.name}`} description="This page does not exist." noindex>
+  <section class="row">
+    <div class="rail">
+      <h2 class="label">404</h2>
+    </div>
+    <div class="main">
+      <h1>Page not found</h1>
+      <p class="prose">
+        Nothing lives at this address. The <a href="/">homepage</a> has the research statement, news and
+        publications; the CV is at <a href="/cv.pdf">/cv.pdf</a>.
+      </p>
+    </div>
+  </section>
+  <Footer />
+</Base>
+
+<style>
+  .label { padding-top: 22px; }
+  h1 {
+    margin-bottom: 14px;
+    font-family: var(--font-display);
+    font-size: var(--fs-name);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+</style>

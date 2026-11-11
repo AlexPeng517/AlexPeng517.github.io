@@ -1,0 +1,122 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { Site } from '../lib/content';
+
+interface Props {
+  site: Site;
+}
+const { site } = Astro.props;
+
+const portraits = import.meta.glob<{ default: ImageMetadata }>('../assets/portrait/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+});
+const portrait = site.portrait
+  ? Object.entries(portraits).find(([path]) => path.endsWith('/' + site.portrait))?.[1].default
+  : undefined;
+if (site.portrait && !portrait) {
+  throw new Error(`site.yaml portrait "${site.portrait}" was not found in src/assets/portrait/`);
+}
+
+const [emailUser, emailDomain] = site.links.email.split('@');
+const profiles = [
+  { label: 'CV', href: site.links.cv },
+  { label: 'Scholar', href: site.links.scholar },
+  { label: 'GitHub', href: site.links.github },
+  { label: 'LinkedIn', href: site.links.linkedin },
+  { label: 'X', href: site.links.x },
+].filter((p) => p.href);
+const external = (href: string) => /^https?:/.test(href);
+---
+
+<header class="row header">
+  <div class="rail portrait-rail">
+    {
+      portrait ? (
+        <div class="media portrait">
+          <Picture
+            src={portrait}
+            alt={site.name}
+            formats={['avif', 'webp']}
+            fallbackFormat="jpg"
+            width={480}
+            height={600}
+            fit="cover"
+            position="top"
+            widths={[240, 360, 480]}
+            sizes="(max-width: 567px) 240px, 200px"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      ) : (
+        <div class="media portrait placeholder" role="img" aria-label="Portrait placeholder">
+          <span class="media-label">Portrait 4:5</span>
+        </div>
+      )
+    }
+  </div>
+  <div class="main">
+    <h1>{site.name}</h1>
+    <p class="meta affiliation">{site.affiliation}</p>
+    <p class="prose bio">{site.bio}</p>
+    {site.status && <p class="prose status">{site.status}</p>}
+    <nav aria-label="Profiles" class="linkrow profiles">
+      {
+        emailUser && emailDomain && (
+          <>
+            {/* Without JavaScript the address shows as text; with it, the text becomes an "Email" link. */}
+            <span class="email" data-email-user={emailUser} data-email-domain={emailDomain}>
+              {emailUser} [at] {emailDomain}
+            </span>
+            {profiles.length > 0 && <span class="sep" aria-hidden="true">/</span>}
+          </>
+        )
+      }
+      {
+        profiles.map((p, i) => (
+          <>
+            <a href={p.href} rel={external(p.href) ? 'me noopener' : undefined}>
+              {p.label}
+            </a>
+            {i < profiles.length - 1 && <span class="sep" aria-hidden="true">/</span>}
+          </>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  // The mailto: address is assembled only when the link is clicked.
+  document.querySelectorAll('[data-email-user]').forEach(function (el) {
+    var a = document.createElement('a');
+    a.href = '#';
+    a.textContent = 'Email';
+    a.addEventListener('click', function () {
+      a.href = 'mailto:' + el.getAttribute('data-email-user') + '@' + el.getAttribute('data-email-domain');
+    });
+    el.replaceChildren(a);
+  });
+</script>
+
+<style>
+  .header { gap: var(--gap); align-items: flex-start; }
+  .portrait-rail { max-width: 240px; }
+  .portrait { width: 100%; aspect-ratio: 4 / 5; }
+  .portrait :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .placeholder { display: flex; align-items: flex-end; padding: 12px; }
+
+  h1 {
+    margin-bottom: 14px;
+    font-family: var(--font-display);
+    font-size: var(--fs-name);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .affiliation { margin-bottom: 22px; }
+  .bio { margin-bottom: 14px; }
+  .status { margin-bottom: 22px; font-style: italic; color: var(--ink-2); }
+  .profiles { gap: 6px 10px; font-size: var(--fs-links); }
+</style>

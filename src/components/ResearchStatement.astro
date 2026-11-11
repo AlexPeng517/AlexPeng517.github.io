@@ -1,0 +1,22 @@
+---
+import type { Site } from '../lib/content';
+
+interface Props {
+  site: Site;
+}
+const { site } = Astro.props;
+---
+
+<section class="section row research" aria-labelledby="research">
+  <div class="rail">
+    <h2 id="research" class="label">Research</h2>
+  </div>
+  <div class="main">
+    <p class="prose statement">{site.statement}</p>
+  </div>
+</section>
+
+<style>
+  .research { margin-top: 72px; }
+  .label { padding-top: 7px; }
+</style>

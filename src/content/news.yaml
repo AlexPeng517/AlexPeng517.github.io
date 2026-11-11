@@ -1,0 +1,12 @@
+# News. date: "YYYY-MM". text: one line; paper names in *italics* (Markdown).
+# Display rule (DESIGN.md §6.4): up to 5 items from the last 12 months; if none qualify, the newest 2.
+# Placeholder dates ("[YYYY-MM]") sort first and must be listed in the build report.
+
+- date: "2026-9"
+  text: "I got a travel grant from NSTC for ECCV 2026 in Malmo, Sweden!"
+
+- date: "2026-9"
+  text: "*DiffRGD* accepted to ECCV 2026."
+
+- date: "2024-12"
+  text: "*Pixel Is Not A Barrier* accepted to AAAI 2025."

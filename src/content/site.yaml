@@ -1,0 +1,51 @@
+# Site-wide content. See DESIGN.md §8. Anything in [square brackets] is a placeholder to fill.
+
+name: "Li-Xuan Alex Peng"
+alternateNames: ["Alex Peng", "Li-Xuan Peng"]
+affiliation: "MS student · Vision Science Lab, NTHU · Embodied AI Lab, NTU"
+
+# File name inside src/assets/portrait/ (shown cropped to 4:5). "" shows the placeholder box.
+# Carried over from the old site: profile_pic.jpg (was live), prof_pic.jpg, prof_pic_color.png.
+portrait: "profile_pic.jpg"
+
+# Footer "Updated" date, YYYY-MM-DD. Remove the line to use the date of the last git commit.
+updated: "2026-11-11"
+
+bio: >-
+  I am a master's student at National Tsing Hua University, advised by Prof. Min Sun,
+  and I work with Prof. Tsung-Wei Ke at National Taiwan University. Before that I was a
+  research assistant at CITI, Academia Sinica, with Dr. Jun-Cheng Chen, and received a
+  B.S. in Electrical Engineering and Computer Science from National Central University.
+status: I am seeking Visiting Student / PhD opportunities  for 2027!   # set to "" after decisions
+statement: >-
+  I study how machines infer physical dynamics from what they see. Instead of training
+  end-to-end predictors, I decompose visual representations along the causal structure
+  of the physical process, so that geometry, material and dynamics can each be checked
+  and adapted. My recent work, DELPHI and ADYTON establish a way to learn 4D deformable
+  dynamics from RGB-D videos. We aim to build a general 4D Physics World Model for robotic
+  decision-making. 
+
+pubGroups:
+  - { id: dynamics, label: "4D Physics Dynamics From Vision" }
+  - { id: generative, label: "Generative Diffusion Models" }
+
+# The strip shows a placeholder until the video file exists in public/media/.
+rollout:
+  # Recorded from the "Direct Hit" scene of the single-step viewer on the DELPHI project page:
+  # the field view and the context frames, without the metrics plot.
+  video: "/media/delphi-rollout.mp4"     # 1440x618, 6.3 s, one frame per step
+  poster: "/media/delphi-rollout.avif"   # first frame
+  totalSteps: 37                         # last step index in the recording (steps 0-37); 0 hides the readout
+  caption: "DELPHI · single-step full-geometry prediction, direct-hit collision"
+
+# A link with an empty value is left out of the header.
+links:
+  # The old site showed academic.alexpeng@gmail.com on the About page and a different
+  # address in the footer icons. The About-page one is used here; change it if you prefer the other.
+  email: "academic.alexpeng@gmail.com"
+  cv: "/cv.pdf"
+  scholar: "https://scholar.google.com/citations?user=nTMygegAAAAJ"   # carried over from the old site
+  github: "https://github.com/AlexPeng517"                            # carried over from the old site
+  linkedin: "https://www.linkedin.com/in/alex-peng"                   # carried over from the old site
+  x: "https://x.com/LXAlexPeng"                                  # carried over from the old site
+  orcid: ""      # [URL, optional; used in JSON-LD only]

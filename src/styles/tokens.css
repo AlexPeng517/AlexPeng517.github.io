@@ -1,0 +1,85 @@
+/* Design tokens — alexpeng517.github.io
+   Source of truth for colour, type and spacing. See DESIGN.md §5.
+   Theme: follows prefers-color-scheme; <html data-theme="light|dark"> overrides. */
+
+:root {
+  /* Colour — light */
+  --paper:   #FAFAFA;  /* oklch(98.5% 0 0) */
+  --surface: #F2F3F4;  /* oklch(96.3% 0.002 265) */
+  --ink:     #191B1D;  /* oklch(22% 0.006 265)   16.6:1 on paper */
+  --ink-2:   #56585D;  /* oklch(46% 0.008 265)    6.8:1 */
+  --ink-3:   #6C6F73;  /* oklch(54% 0.008 265)    4.9:1 */
+  --rule:    #DEE0E2;  /* oklch(90.5% 0.004 265) */
+  --accent:  #1D60BC;  /* oklch(50% 0.16 258)     5.9:1 */
+  --media:   #E9EAEC;  /* placeholder fill for media */
+  --strip:   #0B0C0E;  /* rollout strip background, both themes */
+  --strip-ink: #E6E8EB;
+  --strip-ink-2: #9A9DA3;
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  --font-prose:   'EB Garamond', 'EB Garamond Fallback', Georgia, serif;  /* text face; Cormorant is for display sizes */
+  --font-sans:    'TASA Orbiter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --fs-name:    clamp(40px, 9vw, 54px);
+  --fs-prose:   21px;  --lh-prose: 1.5;
+  --fs-title:   21px;  --lh-title: 1.25;
+  --fs-result:  19px;  --lh-result: 1.4;
+  --fs-authors: 14px;  --lh-authors: 1.5;
+  --fs-meta:    12.5px; --lh-meta: 20px;
+  --fs-links:   13px;
+  --fs-label:   12px;  --ls-label: 0.08em;
+  --fs-caption: 12px;
+  --fs-media-label: 11px;
+
+  /* Layout */
+  --content: 840px;  /* widened from 720 at Alex's request */
+  --page-pad: 24px;
+  --rail: 200px;    /* widened from 176 with the column */
+  --gap: 24px;
+  --radius: 2px;
+
+  /* Spacing scale */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+
+  /* Motion */
+  --t-fast: 120ms;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --paper:   #0F0F11;  /* oklch(17% 0.004 265) */
+  --surface: #17181B;  /* oklch(21% 0.005 265) */
+  --ink:     #E6E8EB;  /* oklch(93% 0.004 265)   15.6:1 */
+  --ink-2:   #A8ABB0;  /* oklch(74% 0.008 265)    8.3:1 */
+  --ink-3:   #8A8C91;  /* oklch(64% 0.008 265)    5.7:1 */
+  --rule:    #2F3033;  /* oklch(31% 0.006 265) */
+  --accent:  #7AACF6;  /* oklch(74% 0.12 258)     8.3:1 */
+  --media:   #1E1F23;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:   #0F0F11;
+    --surface: #17181B;
+    --ink:     #E6E8EB;
+    --ink-2:   #A8ABB0;
+    --ink-3:   #8A8C91;
+    --rule:    #2F3033;
+    --accent:  #7AACF6;
+    --media:   #1E1F23;
+    color-scheme: dark;
+  }
+}
+
+/* Wide-gamut accent (inside Display P3, outside sRGB) */
+@media (color-gamut: p3) {
+  :root { --accent: oklch(50% 0.20 258); }
+  :root[data-theme="dark"] { --accent: oklch(74% 0.14 258); }
+}
+@media (color-gamut: p3) and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --accent: oklch(74% 0.14 258); }
+}

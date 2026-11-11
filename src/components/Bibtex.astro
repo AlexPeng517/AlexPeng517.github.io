@@ -1,0 +1,37 @@
+---
+/** BibTeX block. Hidden until its "bibtex" link is used (bibtex.ts, or :target without JavaScript). */
+interface Props {
+  id: string;
+  bibtex: string;
+}
+const { id, bibtex } = Astro.props;
+---
+
+<div class="bib" id={id} data-bibtex>
+  <button type="button" class="textbtn copy" data-bibtex-copy hidden>copy</button>
+  <pre><code>{bibtex.trim()}</code></pre>
+</div>
+
+<script>
+  import '../scripts/bibtex.ts';
+</script>
+
+<style>
+  .bib {
+    display: none;
+    position: relative;
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  /* Without JavaScript the link's #fragment opens the block; with it, bibtex.ts toggles .open. */
+  :global(html:not(.js)) .bib:target, .bib:global(.open) { display: block; }
+  pre { overflow-x: auto; font: inherit; color: var(--ink); }
+  code { font: inherit; }
+  .copy { position: absolute; top: 10px; right: 14px; font-size: 12px; color: var(--ink-3); background: var(--surface); padding-left: 8px; }
+</style>

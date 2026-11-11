@@ -1,0 +1,69 @@
+---
+import PubEntry from './PubEntry.astro';
+import type { Pub, Site } from '../lib/content';
+
+interface Props {
+  groups: Site['pubGroups'];
+  publications: Pub[];
+}
+const { groups, publications } = Astro.props;
+
+const sections = groups
+  .map((group) => ({ ...group, pubs: publications.filter((p) => p.group === group.id) }))
+  .filter((group) => group.pubs.length > 0);
+const anyEqual = publications.some((p) => p.authors.some((a) => a.equal));
+---
+
+<section class="section" aria-labelledby="publications">
+  {
+    sections.map((group, i) => (
+      <>
+        <div class:list={['row', 'group', { later: i > 0 }]}>
+          <div class="rail" aria-hidden={i > 0 ? 'true' : undefined}>
+            {i === 0 && (
+              <h2 id="publications" class="label">
+                Publications
+              </h2>
+            )}
+          </div>
+          <h3 class="main label">{group.label}</h3>
+        </div>
+        {group.pubs.map((pub, j) => (
+          <div class:list={['entry', { first: j === 0 }]}>
+            <PubEntry pub={pub} />
+          </div>
+        ))}
+      </>
+    ))
+  }
+  {
+    sections.length === 0 && (
+      <div class="row group">
+        <div class="rail">
+          <h2 id="publications" class="label">
+            Publications
+          </h2>
+        </div>
+      </div>
+    )
+  }
+  {
+    anyEqual && (
+      <div class="row note">
+        <div class="rail" aria-hidden="true" />
+        <p class="main">* Equal contribution.</p>
+      </div>
+    )
+  }
+</section>
+
+<style>
+  .group { gap: 8px var(--gap); align-items: baseline; }
+  .group.later { margin-top: var(--s-7); }
+  .entry { margin-top: var(--s-6); }
+  .entry.first { margin-top: var(--s-5); }
+  .note { margin-top: 28px; gap: 8px var(--gap); }
+  .note p { font-family: var(--font-mono); font-size: 12px; line-height: 18px; font-weight: 400; color: var(--ink-3); }
+  /* An empty rail has no height, so it must not add a row gap once the layout wraps. */
+  .rail:empty { min-height: 0; }
+</style>

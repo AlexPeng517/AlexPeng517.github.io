@@ -1,0 +1,56 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import Meta from '../components/Meta.astro';
+import type { Site } from '../lib/content';
+
+interface Props {
+  site: Site;
+  title?: string;
+  description?: string;
+  jsonLd?: boolean;
+  noindex?: boolean;
+}
+
+const { site, ...meta } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="preload"
+      href="/fonts/cormorant-garamond-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/eb-garamond-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <Meta site={site} {...meta} />
+    <!-- Runs before first paint: restores a stored theme choice and marks the page as scripted. -->
+    <script is:inline>
+      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <main class="page">
+      <slot />
+    </main>
+  </body>
+</html>

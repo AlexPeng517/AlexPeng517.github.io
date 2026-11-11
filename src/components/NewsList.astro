@@ -1,0 +1,32 @@
+---
+import { inlineMarkdown, type News } from '../lib/content';
+
+interface Props {
+  news: News[];
+}
+const { news } = Astro.props;
+---
+
+<section class="section row" aria-labelledby="news">
+  <div class="rail">
+    <h2 id="news" class="label">News</h2>
+  </div>
+  <ul class="main">
+    {
+      news.map((item) => (
+        <li>
+          <span class="meta date">{item.date}</span>
+          <span class="text" set:html={inlineMarkdown(item.text)} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .label { padding-top: 5px; }
+  ul { display: flex; flex-direction: column; gap: 10px; }
+  li { display: flex; gap: 16px; align-items: baseline; }
+  .date { flex: 0 0 64px; white-space: nowrap; }
+  .text { font-size: var(--fs-result); line-height: var(--lh-result); font-weight: 400; }
+</style>

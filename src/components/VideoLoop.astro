@@ -1,0 +1,26 @@
+---
+/** A short silent loop layered over a poster. video.ts decides when it plays. */
+interface Props {
+  src: string;
+}
+const { src } = Astro.props;
+---
+
+<video class="loop" muted playsinline loop preload="none" src={src} data-loop aria-hidden="true" tabindex="-1"></video>
+
+<script>
+  import '../scripts/video.ts';
+</script>
+
+<style>
+  .loop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--t-fast) ease-out;
+  }
+  .loop:global(.playing) { opacity: 1; }
+</style>

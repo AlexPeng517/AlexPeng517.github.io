@@ -1,0 +1,159 @@
+# Publications — one entry per paper. Schema: src/content.config.ts (DESIGN.md §9).
+# media.poster: file name in src/assets/media/.  media.loop: path under public/, e.g. "/media/delphi-loop.mp4".
+# Anything in [square brackets] is a placeholder for Alex to fill. year: 0 means unknown; render it as "[year]".
+
+- id: delphi
+  # Source: https://alexpeng517.github.io/DELPHI/
+  title: "Beyond the Visible: Learning Dense 4D Motion in Contact-Rich Deformable Worlds"
+  authors:
+    - { name: "Li-Xuan Peng", self: true }
+    - { name: "Po Yi Wu", equal: true }
+    - { name: "Yu-Tsen Tsai", equal: true }
+    - { name: "Tsung-Wei Ke" }
+    - { name: "Min Sun" }
+  venue: ""                     # under double-blind review: never name the venue
+  year: 2026
+  status: preprint
+  contribution: first
+  corresponding: true
+  group: dynamics
+  media:
+    poster: "delphi_wipe_teaser.png"   # the wipe-comparison teaser, shown whole. [loop]
+    background: "#12232b"              # fills the 4:3 box above and below the image (default is white)
+  links:
+    project: "https://alexpeng517.github.io/DELPHI/"
+    # arxiv / code: the project page lists both as not yet available
+  # The project page states no quantitative result yet. [Add a number when the paper is public.]
+  result: "A vision-conditioned Eulerian displacement field that predicts dense 4D motion everywhere: visible surface, occluded interior, and ambient off-object space."
+  # Copied from the project page.
+  bibtex: |
+    @inproceedings{peng2026delphi,
+      title     = {Beyond the Visible: Learning Dense 4D Motion in
+                   Contact-Rich Deformable Worlds},
+      author    = {Peng, Li-Xuan and Wu, Po Yi and Tsai, Yu-Tsen and Ke, Tsung-Wei and Sun, Min},
+      booktitle = {arXiv},
+      year      = {2026}
+    }
+
+- id: diffrgd
+  # Sources: Google Scholar, arXiv 2606.28417, https://diffrgd.github.io/
+  title: "DiffRGD: An Inference-Time Diffusion Guidance Through Riemannian Gradient Descent"
+  authors:
+    - { name: "Jia-Wei Liao" }
+    - { name: "Li-Xuan Peng", self: true }
+    - { name: "Mei-Heng Yueh" }
+    - { name: "Min Sun" }
+    - { name: "Cheng-Fu Chou" }
+    - { name: "Jun-Cheng Chen" }
+  venue: "ECCV"
+  year: 2026
+  status: published
+  contribution: other
+  group: generative
+  media:
+    poster: "diffrgd_teaser.jpg"   # teaser from the project page. [loop]
+  links:
+    paper: "https://arxiv.org/pdf/2606.28417"
+    arxiv: "https://arxiv.org/abs/2606.28417"
+    project: "https://diffrgd.github.io/"
+    code: "https://github.com/jwliao1209/DiffRGD"
+  # Written from the abstract, which gives no single headline number. [Add one if you have it.]
+  result: "Inference-time guidance that keeps diffusion latents on the sphere induced by their Gaussian distribution, solved by Riemannian gradient descent; plugs into any pre-trained diffusion model."
+  # Copied from the project page.
+  bibtex: |
+    @inproceedings{liao2026diffrgd,
+      title     = {DiffRGD: An Inference-Time Diffusion Guidance
+                   Through Riemannian Gradient Descent},
+      author    = {Liao, Jia-Wei and Peng, Li-Xuan and Yueh, Mei-Heng
+                   and Sun, Min and Chou, Cheng-Fu and Chen, Jun-Cheng},
+      booktitle = {European Conference on Computer Vision (ECCV)},
+      year      = {2026},
+    }
+
+- id: dgg
+  # Sources: Google Scholar, OpenReview (NeurIPS 2025 Workshop AI4Music)
+  title: "Zero-shot Geometry-Aware Diffusion Guidance for Music Restoration"
+  authors:
+    - { name: "Jia-Wei Liao" }
+    - { name: "Pin-Chi Pan" }
+    - { name: "Li-Xuan Peng", self: true }
+    - { name: "Sheng-Ping Yang" }
+    - { name: "Yen-Tung Yeh" }
+    - { name: "Cheng-Fu Chou" }
+    - { name: "Yi-Hsuan Yang" }
+  venue: "NeurIPS Workshop on AI for Music"
+  year: 2025                    # workshop year; Google Scholar lists the entry under 2026
+  status: workshop
+  contribution: other
+  group: generative             # moved from "dynamics": it is a diffusion-guidance paper. [confirm]
+  media:
+    poster: "dgg_pipeline.png"   # method figure. [loop]
+  links:
+    paper: "https://openreview.net/forum?id=pKmjzw8TO8"
+  # Written from the abstract, which gives no single headline number. [Add one if you have it.]
+  result: "Diffusion Geodesic Guidance moves noisy samples along geodesics with a closed-form spherical interpolation, improving on training-free baselines across four music restoration tasks."
+  bibtex: ""                    # [OpenReview's BibTeX export could not be fetched; paste it here]
+
+- id: atkpdm
+  title: "Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models"
+  authors:
+    - { name: "Chun-Yen Shih", equal: true }
+    - { name: "Li-Xuan Peng", self: true, equal: true }
+    - { name: "Jia-Wei Liao" }
+    - { name: "Ernie Chu" }
+    - { name: "Cheng-Fu Chou" }
+    - { name: "Jun-Cheng Chen" }
+  venue: "AAAI"
+  year: 2025
+  status: published
+  contribution: co-first
+  group: generative
+  media:
+    poster: "AtkPDM_manifold.png"   # carry over from the old site until a loop exists
+  links:
+    arxiv: "https://arxiv.org/abs/2408.11810"
+    paper: "https://arxiv.org/pdf/2408.11810"
+  result: "An evasion attack that protects images from pixel-domain diffusion editing such as SDEdit, and extends to latent diffusion models."
+  # Migrated from the old site's _bibliography/papers.bib (arXiv entry; al-folio display fields and
+  # the * marks in author names removed). Replace with the AAAI proceedings entry if you prefer.
+  bibtex: |
+    @misc{shih2024pixelbarriereffectiveevasion,
+      title={Pixel Is Not A Barrier: An Effective Evasion Attack for Pixel-Domain Diffusion Models},
+      author={Chun-Yen Shih and Li-Xuan Peng and Jia-Wei Liao and Ernie Chu and Cheng-Fu Chou and Jun-Cheng Chen},
+      year={2024},
+      eprint={2408.11810},
+      archivePrefix={arXiv}
+    }
+
+- id: diffqrcoder
+  title: "DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement"
+  authors:
+    - { name: "Jia-Wei Liao" }
+    - { name: "Li-Xuan Peng", self: true, equal: true }
+    - { name: "Winston Wang", equal: true }
+    - { name: "Tzu-Sian Wang", equal: true }
+    - { name: "Ju-Hsuan Weng" }
+    - { name: "Cheng-Fu Chou" }
+    - { name: "Jun-Cheng Chen" }
+  venue: "WACV"
+  year: 2025
+  status: published
+  contribution: other
+  group: generative
+  media:
+    poster: "two_stage_generation_pipeline.png"   # carry over from the old site until a loop exists
+  links:
+    arxiv: "https://arxiv.org/abs/2409.06355"
+    paper: "https://arxiv.org/pdf/2409.06355"
+    project: "https://jwliao1209.github.io/DiffQRCoder/"
+  result: "Raises QR scan success from 60% with ControlNet alone to 99%."
+  # Migrated from the old site's _bibliography/papers.bib (arXiv entry; al-folio display fields and
+  # the * marks in author names removed). Replace with the WACV proceedings entry if you prefer.
+  bibtex: |
+    @misc{liao2024diffusionbased,
+      title={DiffQRCoder: Diffusion-based Aesthetic QR Code Generation with Scanning Robustness Guided Iterative Refinement},
+      author={Jia-Wei Liao and Li-Xuan Peng and Winston Wang and Tzu-Sian Wang and Ju-Hsuan Weng and Cheng-Fu Chou and Jun-Cheng Chen},
+      year={2025},
+      eprint={2409.06355},
+      archivePrefix={arXiv}
+    }
