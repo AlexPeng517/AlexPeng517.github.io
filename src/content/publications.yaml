@@ -35,6 +35,42 @@
       year      = {2026}
     }
 
+- id: v2cedit
+  # Source: arXiv 2611.10066 (journal ref: WACV 2027)
+  title: "VLM as an Editing Pilot: VLM-Steered Velocity Control for Flow-Based Image Editing"
+  authors:
+    - { name: "Kuan-Shen Chiu", equal: true }
+    - { name: "Jia-Wei Liao", equal: true }
+    - { name: "Yu-Chieh Chao" }
+    - { name: "Li-Xuan Peng", self: true }
+    - { name: "Wei-Yun Ma" }
+    - { name: "Cheng-Fu Chou" }
+  venue: "WACV"
+  year: 2027
+  status: published
+  contribution: other
+  group: generative
+  media:
+    poster: "v2cedit_pipeline.png"   # method figure. [loop]
+  links:
+    paper: "https://arxiv.org/pdf/2611.10066"
+    arxiv: "https://arxiv.org/abs/2611.10066"
+    code: "https://github.com/Kuanshen77/V2C-Edit"
+  # Written from the abstract, which gives no single headline number. [Add one if you have it.]
+  result: "A training-free framework in which a VLM picks among coupling-controlled velocities at each step of flow-based editing, improving instruction alignment over FlowEdit on MagicBrush and PIE-Bench with FLUX and SD3."
+  # Built from the arXiv metadata (arXiv's BibTeX export did not load). Replace with the WACV entry when it exists.
+  bibtex: |
+    @misc{chiu2026v2cedit,
+      title         = {VLM as an Editing Pilot: VLM-Steered Velocity Control
+                       for Flow-Based Image Editing},
+      author        = {Chiu, Kuan-Shen and Liao, Jia-Wei and Chao, Yu-Chieh
+                       and Peng, Li-Xuan and Ma, Wei-Yun and Chou, Cheng-Fu},
+      year          = {2026},
+      eprint        = {2611.10066},
+      archivePrefix = {arXiv},
+      primaryClass  = {cs.CV}
+    }
+
 - id: diffrgd
   # Sources: Google Scholar, arXiv 2606.28417, https://diffrgd.github.io/
   title: "DiffRGD: An Inference-Time Diffusion Guidance Through Riemannian Gradient Descent"
